@@ -7,6 +7,8 @@ public class ClimbUpDownState : State {
 	public float speed = 1;
 	[SerializeField]protected Transform body;
 	public Animator bodyAnimation;
+	public SmoothOperator muchSmooth;
+
 
 	public void OnEnable()
 	{
@@ -14,6 +16,13 @@ public class ClimbUpDownState : State {
 		if(data == null){
 			data = GetComponent<StateData>();
 		}
+		muchSmooth.targetZOffset = 10;
+		muchSmooth.targetFov = 10;
+	}
+
+	public void OnDisable(){
+		muchSmooth.targetZOffset = 5;
+		muchSmooth.targetFov = 7;
 	}
 
 	void Update () {

@@ -4,7 +4,7 @@ using System.Collections;
 public class ClimbDownSwitch : MonoBehaviour {
 	
 	public Hero hero;
-	
+
 	public void OnTriggerEnter(Collider other){
 		Hero hero = other.GetComponent<Hero>();
 		if(hero){

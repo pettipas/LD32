@@ -8,6 +8,8 @@ public class Selector : MonoBehaviour {
 	public Transform hitObject;
 	public GameObject testDropPrefab;
 
+	float timer;
+
 	public void Update(){
 		Camera main = Camera.main;
 		if(main == null){
@@ -24,11 +26,14 @@ public class Selector : MonoBehaviour {
 			hitObject = hit.transform;
 		}
 
-		if(Physics.Raycast(ray,out hit) && Input.GetMouseButtonUp(0)) {
+		timer+=Time.deltaTime;
+
+		if(Physics.Raycast(ray,out hit) && Input.GetMouseButtonUp(0) && timer>1) {
+			timer = 0;
 			Vector3 s = hit.point;
-			inUse = true;
 			Instantiate(testDropPrefab,new Vector3(s.x,s.y+20,s.z),testDropPrefab.transform.rotation);
 		}
+
 
 	}
 }
