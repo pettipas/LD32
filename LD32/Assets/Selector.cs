@@ -6,7 +6,6 @@ public class Selector : MonoBehaviour {
 
 	public GameObject curser;
 	public Transform hitObject;
-
 	public GameObject testDropPrefab;
 
 	public void Update(){
@@ -25,7 +24,11 @@ public class Selector : MonoBehaviour {
 			hitObject = hit.transform;
 		}
 
-
+		if(Physics.Raycast(ray,out hit) && Input.GetMouseButtonUp(0)) {
+			Vector3 s = hit.point;
+			inUse = true;
+			Instantiate(testDropPrefab,new Vector3(s.x,s.y+20,s.z),testDropPrefab.transform.rotation);
+		}
 
 	}
 }
