@@ -8,8 +8,6 @@ public class DroppedItem : MonoBehaviour {
 	public BreakEffect breakEffect;
 	public void OnCollisionEnter(Collision collision){
 
-		Debug.Log(collision.relativeVelocity.magnitude);
-
 		landed = true;
 		Hero h = collision.transform.GetComponent<Hero>();
 		BadGuy bg = collision.transform.GetComponent<BadGuy>();

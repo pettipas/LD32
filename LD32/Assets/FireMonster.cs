@@ -8,12 +8,16 @@ public class FireMonster : MonoBehaviour {
 	public Transform body;
 	public Animator fireAnimator; 
 	public ParticleSystem particleSystem;
+
+	public float lockHeight;
+
 	public void Awake(){
 		Hero hero = GameObject.FindObjectOfType<Hero>();
 		walkTarget = hero.transform;
 		StartCoroutine(Seek (5));
 		particleSystem.enableEmission = false;
 		fireAnimator.Play("hop");
+		lockHeight = transform.position.y;
 	}
 	float walkTimer = 0;
 	public IEnumerator Seek(float seekTime){
@@ -36,8 +40,8 @@ public class FireMonster : MonoBehaviour {
 		fireAnimator.Play("hop");
 		while(walkTimer < runTime){
 			Vector3 dir = (transform.position - walkTarget.position).normalized;
-			ctrl.Move(dir *1.5f*Time.smoothDeltaTime);
 			dir = new Vector3(dir.x,0,dir.z);
+			ctrl.Move(dir *1.5f*Time.smoothDeltaTime);
 			body.transform.forward = dir;
 			walkTimer+=Time.deltaTime;
 			yield return null;
@@ -79,5 +83,9 @@ public class FireMonster : MonoBehaviour {
 		}else {
 			StartCoroutine(Seek (5));
 		}
+	}
+
+	public void LateUpdate(){
+		transform.position = new Vector3(transform.position.x,lockHeight,transform.position.z);
 	}
 }
