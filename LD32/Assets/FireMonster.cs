@@ -31,7 +31,7 @@ public class FireMonster : MonoBehaviour {
 		fireAnimator.Play("hop");
 		while(walkTimer < seekTime && walkTarget !=null){
 			Vector3 dir = (walkTarget.position - transform.position).normalized;
-			ctrl.Move(dir *1.5f*Time.smoothDeltaTime);
+			ctrl.Move(dir *2.2f*Time.smoothDeltaTime);
 			dir = new Vector3(dir.x,0,dir.z);
 			body.transform.forward = dir;
 			walkTimer+=Time.deltaTime;
