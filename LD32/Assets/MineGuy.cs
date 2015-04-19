@@ -11,10 +11,12 @@ public class MineGuy : MonoBehaviour {
 	public List<Transform> waypoints = new List<Transform>();
 	public Transform walkTarget;
 	public GameObject projPrefab;
-	public bool turretMode;
 	public Transform player;
 	public Transform launchPoint;
 	public int index = 0;
+
+	public float lockHeight;
+
 	public void Start(){
 
 		if(EntryPoint.StaticHero == null){
@@ -75,5 +77,9 @@ public class MineGuy : MonoBehaviour {
 			Gizmos.color = Color.yellow;
 			Gizmos.DrawSphere(wp.position,0.3f);
 		});
+	}
+
+	public void LateUpdate(){
+		transform.position = new Vector3(transform.position.x,lockHeight,transform.position.z);
 	}
 }
