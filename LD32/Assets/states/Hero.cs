@@ -7,6 +7,7 @@ public class Hero : MonoBehaviour {
 
 
 	public List<GameObject> glasses = new List<GameObject>();
+	public List<GameObject> hearts = new List<GameObject>();
 	public static Hero Instance;
 	public Vector3 currentDest;
 	protected Movement mvment;
@@ -24,6 +25,12 @@ public class Hero : MonoBehaviour {
 				glasses[i].GetComponent<MeshRenderer>().enabled = false;
 			}else {
 				glasses[i].GetComponent<MeshRenderer>().enabled = true;
+			}
+
+			if(i<=index){
+				hearts[i].GetComponent<MeshRenderer>().enabled = true;
+			}else {
+				hearts[i].GetComponent<MeshRenderer>().enabled = false;
 			}
 		}
 	}

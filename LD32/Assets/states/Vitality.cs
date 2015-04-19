@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Vitality : MonoBehaviour {
 
+
 	public int hits;
 	public GameObject death;
 	public void TakeHit(){
@@ -13,6 +14,11 @@ public class Vitality : MonoBehaviour {
 			Instantiate(death,transform.position,Quaternion.identity);
 			Destroy(gameObject);
 		}
+	}
+
+	public void GainHealth ()
+	{
+		hits++;
 	}
 
 }

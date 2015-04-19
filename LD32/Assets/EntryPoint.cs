@@ -6,6 +6,7 @@ using System.Linq;
 public class EntryPoint : MonoBehaviour {
 
 	public Hero hero;
+	public GameObject boss;
 	public GameObject gameOverPrefab;
 	public SmoothOperator operatorCam;
 
@@ -39,7 +40,7 @@ public class EntryPoint : MonoBehaviour {
 			playerLatestPosition = hero.transform.position;
 		}
 
-		if(hero == null && !restarted){
+		if((hero == null || boss == null) && !restarted){
 			restarted = true;
 			operatorCam.targetFov = 10;
 			Instantiate(gameOverPrefab,playerLatestPosition+=new Vector3(0,20,0),gameOverPrefab.transform.rotation);
