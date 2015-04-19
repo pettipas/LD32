@@ -3,7 +3,11 @@ using System.Collections;
 
 public class Vitality : MonoBehaviour {
 
-	public void TakeHit(float damage){
+	public int hits;
 
+	public void TakeHit(){
+		hits--;
+		GetComponent<MaterialFlasher>().FlashForTime(0.5f);
 	}
+
 }

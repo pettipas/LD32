@@ -30,6 +30,7 @@ public class Movement : State {
 			body.transform.forward = data.Direction.normalized;
 		}
 
+
 	}
 
 	void LateUpdate(){

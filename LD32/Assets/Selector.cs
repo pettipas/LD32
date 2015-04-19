@@ -21,19 +21,16 @@ public class Selector : MonoBehaviour {
 		if(Physics.Raycast(ray,out hit)) {
 			Vector3 mPos = hit.point;
 			if(curser)curser.transform.position = mPos;
-
-
 			hitObject = hit.transform;
 		}
 
 		timer+=Time.deltaTime;
 
-		if(Physics.Raycast(ray,out hit) && Input.GetMouseButtonUp(0) && timer>1) {
+		if(Physics.Raycast(ray,out hit) && Input.GetMouseButtonUp(0) && timer>0.3f) {
 			timer = 0;
 			Vector3 s = hit.point;
 			Instantiate(testDropPrefab,new Vector3(s.x,s.y+20,s.z),testDropPrefab.transform.rotation);
 		}
-
 
 	}
 }

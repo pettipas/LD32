@@ -61,7 +61,7 @@ public class TakeDamageState : State {
 		   || poetentialDistance >= slideDistance)
 		{
 			Vitality v = GetComponent<Vitality>();
-			if(v)v.TakeHit(Damage);
+			if(v)v.TakeHit();
 			GetComponent<MonoStateMachine>().DoTransition(this,ctrl);
 		}
 	}

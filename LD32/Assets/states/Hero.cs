@@ -17,7 +17,6 @@ public class Hero : MonoBehaviour {
 
 	public void Init () {
 		Instance = this;
-		transform.parent = null;//deparent
 		GetComponent<Movement>().enabled = true;
 	}
 
@@ -29,8 +28,6 @@ public class Hero : MonoBehaviour {
 
 	public void SetDestination(Vector3 dest){
 		currentDest = dest;
-		agent.updateRotation = false;
-		agent.SetDestination(dest);
 	}
 
 	public void StartClimb() {
@@ -43,22 +40,6 @@ public class Hero : MonoBehaviour {
 		stateMachine.DoTransition(mvment);
 	}
 
-	public void Update(){
-		Camera main = Camera.main;
-		if(main == null){
-			return;
-		}
-
-		Ray ray = main.ScreenPointToRay(Input.mousePosition);
-		RaycastHit hit;
-		if(Physics.Raycast(ray,out hit) 
-		   && Input.GetMouseButtonUp(0))
-		{
-			if(hit.transform.name == "Plane"){
-				//Hero.Instance.SetDestination(hit.point);
-			}
-		}
-	}
 
 	public void OnDrawGizmos(){
 		Gizmos.color = Color.cyan;

@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.4.0" xmlns="http://www.collada.org/2005/11/COLLADASchema">
+  <asset>
+    <contributor>
+      <authoring_tool>Minddesk Qubicle 2</authoring_tool>
+      <comments>Get Qubicle at www.minddesk.com</comments>
+    </contributor>
+    <created>2015-04-187:46 PM19:46:35:854</created>
+    <modified>2015-04-187:46 PM19:46:35:854</modified>
+    <unit meter="0.01" />
+  </asset>
+  <library_images>
+    <image id="miner_dood-image" name="miner_dood-image">
+      <init_from>file:///Materials/miner_dood.png</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="miner_dood-material" name="miner_dood-material">
+      <instance_effect url="#miner_dood-shader-fx" />
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="miner_dood-shader-fx" name="miner_dood-shader-fx">
+      <profile_COMMON>
+        <newparam sid="miner_dood-image-surface">
+          <surface type="2D">
+            <init_from>miner_dood-image</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="miner_dood-image-sampler">
+          <sampler2D>
+            <source>miner_dood-image-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NEAREST</minfilter>
+            <magfilter>NEAREST</magfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="standard">
+          <lambert>
+            <ambient>
+              <color sid="ambient">0.0 0.0 0.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="CHANNEL0" texture="miner_dood-image-sampler" />
+            </diffuse>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry name="Box_11" id="Box_11-lib">
+      <mesh>
+        <source id="Box_11-position">
+          <float_array id="Box_11-position-array" count="186">7.5 7.5 -7.5 7.5 -7.5 -7.5 -7.5 -7.5 -7.5 -7.5 7.5 -7.5 -7.5 0.5 -3.5 -7.5 -5.5 -3.5 -9.5 -5.5 -3.5 -9.5 0.5 -3.5 9.5 0.5 -3.5 9.5 -5.5 -3.5 7.5 -5.5 -3.5 7.5 0.5 -3.5 -6.5 5.5 8.5 -6.5 -5.5 8.5 -0.5 -5.5 8.5 -0.5 5.5 8.5 0.5 5.5 8.5 0.5 -5.5 8.5 6.5 -5.5 8.5 6.5 5.5 8.5 -9.5 0.5 2.5 -9.5 -5.5 2.5 -7.5 -5.5 2.5 -7.5 0.5 2.5 -7.5 6.5 7.5 -7.5 -7.5 7.5 -6.5 -7.5 7.5 -6.5 6.5 7.5 -6.5 -5.5 7.5 -0.5 -7.5 7.5 -0.5 -5.5 7.5 -0.5 6.5 7.5 0.5 -7.5 7.5 0.5 6.5 7.5 0.5 -5.5 7.5 6.5 -7.5 7.5 6.5 -5.5 7.5 0.5 7.5 7.5 0.5 5.5 7.5 6.5 5.5 7.5 6.5 7.5 7.5 7.5 -7.5 7.5 7.5 7.5 7.5 7.5 0.5 2.5 7.5 -5.5 2.5 9.5 -5.5 2.5 9.5 0.5 2.5 -7.5 7.5 7.5 -6.5 5.5 7.5 -0.5 5.5 7.5 -7.5 0.5 -7.5 -7.5 0.5 6.5 -7.5 7.5 6.5 -7.5 -5.5 -7.5 -7.5 -7.5 6.5 -7.5 -5.5 6.5 7.5 7.5 6.5 7.5 0.5 6.5 7.5 0.5 -7.5 7.5 -5.5 6.5 7.5 -7.5 6.5 7.5 -5.5 -7.5 </float_array>
+          <technique_common>
+            <accessor source="Box_11-position-array" stride="3" count="62">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Box_11-normal">
+          <float_array id="Box_11-normal-array" count="18">0.0 0.0 1.0 0.0 0.0 -1.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 -1.0 0.0</float_array>
+          <technique_common>
+            <accessor source="Box_11-normal-array" stride="3" count="6">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Box_11-uv">
+          <float_array id="Box_11-uv-array" count="404">0.398438 0.125 0.398438 0.007813 0.515625 0.007813 0.515625 0.125 0.53125 0.125 0.53125 0.007813 0.648438 0.007813 0.648438 0.125 0.664063 0.125 0.664063 0.007813 0.78125 0.007813 0.78125 0.125 0.039063 0.304688 0.039063 0.1875 0.046875 0.1875 0.046875 0.304688 0.0625 0.304688 0.0625 0.1875 0.070313 0.1875 0.070313 0.304688 0.085938 0.304688 0.085938 0.1875 0.09375 0.1875 0.09375 0.304688 0.109375 0.296875 0.109375 0.1875 0.117188 0.1875 0.117188 0.296875 0.15625 0.296875 0.15625 0.1875 0.164063 0.1875 0.164063 0.296875 0.375 0.273438 0.375 0.1875 0.421875 0.1875 0.421875 0.273438 0.4375 0.273438 0.4375 0.1875 0.484375 0.1875 0.484375 0.273438 0.609375 0.273438 0.609375 0.1875 0.617188 0.1875 0.617188 0.273438 0.632813 0.273438 0.632813 0.1875 0.640625 0.1875 0.640625 0.273438 0.65625 0.273438 0.65625 0.1875 0.664063 0.1875 0.664063 0.273438 0.679688 0.273438 0.679688 0.1875 0.6875 0.1875 0.6875 0.273438 0.007813 0.46875 0.007813 0.414063 0.117188 0.414063 0.117188 0.46875 0.132813 0.46875 0.132813 0.414063 0.242188 0.414063 0.242188 0.46875 0.5625 0.460938 0.5625 0.414063 0.609375 0.414063 0.609375 0.460938 0.625 0.460938 0.625 0.414063 0.671875 0.414063 0.671875 0.460938 0.6875 0.460938 0.6875 0.414063 0.71875 0.414063 0.71875 0.460938 0.734375 0.460938 0.734375 0.414063 0.765625 0.414063 0.765625 0.460938 0.78125 0.460938 0.78125 0.414063 0.8125 0.414063 0.8125 0.460938 0.828125 0.460938 0.828125 0.414063 0.859375 0.414063 0.859375 0.460938 0.875 0.460938 0.875 0.414063 0.890625 0.414063 0.890625 0.460938 0.90625 0.460938 0.90625 0.414063 0.921875 0.414063 0.921875 0.460938 0.9375 0.460938 0.9375 0.414063 0.953125 0.414063 0.953125 0.460938 0.96875 0.460938 0.96875 0.414063 0.984375 0.414063 0.984375 0.460938 0.007813 0.53125 0.007813 0.484375 0.023438 0.484375 0.023438 0.53125 0.039063 0.53125 0.039063 0.484375 0.054688 0.484375 0.054688 0.53125 0.070313 0.53125 0.070313 0.484375 0.085938 0.484375 0.085938 0.53125 0.101563 0.53125 0.101563 0.484375 0.117188 0.484375 0.117188 0.53125 0.625 0.5 0.625 0.484375 0.734375 0.484375 0.734375 0.5 0.75 0.5 0.75 0.484375 0.859375 0.484375 0.859375 0.5 0.9375 0.15625 0.9375 0.140625 0.984375 0.140625 0.984375 0.15625 0.007813 0.59375 0.007813 0.578125 0.054688 0.578125 0.054688 0.59375 0.070313 0.59375 0.070313 0.578125 0.117188 0.578125 0.117188 0.59375 0.867188 0.265625 0.867188 0.257813 0.929688 0.257813 0.929688 0.265625 0.945313 0.265625 0.945313 0.257813 0.992188 0.257813 0.992188 0.265625 0.84375 0.398438 0.84375 0.390625 0.890625 0.390625 0.890625 0.398438 0.90625 0.398438 0.90625 0.390625 0.953125 0.390625 0.953125 0.398438 0.445313 0.523438 0.445313 0.515625 0.492188 0.515625 0.492188 0.523438 0.507813 0.523438 0.507813 0.515625 0.554688 0.515625 0.554688 0.523438 0.648438 0.070313 0.648438 0.023438 0.53125 0.070313 0.53125 0.023438 0.164063 0.203125 0.164063 0.289063 0.117188 0.203125 0.117188 0.289063 0.109375 0.203125 0.109375 0.289063 0.070313 0.585938 0.0625 0.203125 0.0625 0.289063 0.875 0.257813 0.921875 0.257813 0.039063 0.414063 0.085938 0.414063 0.65625 0.5 0.703125 0.5 0.046875 0.296875 0.039063 0.25 0.039063 0.203125 0.210938 0.414063 0.164063 0.414063 0.828125 0.5 0.78125 0.5 0.09375 0.25 0.09375 0.203125 0.664063 0.015625 0.726563 0.007813 0.773438 0.007813 0.78125 0.015625 0.398438 0.117188 0.515625 0.117188 0.40625 0.125 0.453125 0.125 0.460938 0.125 0.507813 0.125 </float_array>
+          <technique_common>
+            <accessor source="Box_11-uv-array" stride="2" count="202">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Box_11-vertex">
+          <input semantic="POSITION" source="#Box_11-position" />
+        </vertices>
+        <polylist material="miner_dood-material" count="120">
+          <input offset="0" semantic="VERTEX" source="#Box_11-vertex" />
+          <input offset="1" semantic="NORMAL" source="#Box_11-normal" />
+          <input offset="2" semantic="TEXCOORD" source="#Box_11-uv" />
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 1 7 0 1 4 58 1 166 58 1 166 50 1 164 3 1 7 50 1 164 58 1 166 61 1 167 61 1 167 53 1 165 50 1 164 53 1 165 61 1 167 1 1 5 1 1 5 2 1 6 53 1 165 5 1 93 7 1 95 4 1 92 5 1 93 6 1 94 7 1 95 9 1 89 11 1 91 8 1 88 9 1 89 10 1 90 11 1 91 13 0 37 15 0 39 12 0 36 13 0 37 14 0 38 15 0 39 17 0 33 19 0 35 16 0 32 17 0 33 18 0 34 19 0 35 21 0 109 23 0 111 20 0 108 21 0 109 22 0 110 23 0 111 27 0 31 24 0 28 25 0 29 25 0 29 48 0 169 27 0 31 48 0 169 25 0 29 26 0 30 26 0 30 28 0 168 48 0 169 26 0 133 30 0 135 28 0 132 26 0 133 29 0 134 30 0 135 33 0 27 31 0 24 49 0 173 49 0 173 38 0 171 33 0 27 38 0 171 49 0 173 30 0 172 30 0 172 34 0 170 38 0 171 34 0 170 30 0 172 29 0 25 29 0 25 32 0 26 34 0 170 32 0 129 36 0 131 34 0 128 32 0 129 35 0 130 36 0 131 40 0 139 37 0 136 33 0 174 33 0 174 39 0 138 40 0 139 39 0 138 33 0 174 38 0 137 42 0 19 40 0 16 39 0 176 39 0 176 41 0 18 42 0 19 41 0 18 39 0 176 36 0 175 36 0 175 35 0 17 41 0 18 44 0 113 46 0 115 43 0 112 44 0 113 45 0 114 46 0 115 37 0 143 47 0 140 24 0 141 24 0 141 33 0 142 37 0 143 33 0 142 24 0 141 27 0 177 27 0 177 31 0 178 33 0 142 48 0 157 31 0 159 27 0 156 48 0 157 49 0 158 31 0 159 52 2 59 3 2 56 50 2 57 50 2 57 51 2 58 52 2 59 51 2 58 50 2 57 4 2 179 4 2 179 23 2 180 51 2 58 6 2 69 20 2 71 7 2 68 6 2 69 21 2 70 20 2 71 5 2 181 53 2 120 2 2 121 2 2 121 22 2 182 5 2 181 22 2 182 2 2 121 54 2 122 54 2 122 55 2 123 22 2 182 53 2 81 4 2 83 50 2 80 53 2 81 5 2 82 4 2 83 22 2 85 51 2 87 23 2 84 22 2 85 55 2 86 51 2 87 47 2 15 52 2 12 51 2 184 51 2 184 24 2 183 47 2 15 24 2 183 51 2 184 55 2 185 55 2 185 25 2 14 24 2 183 25 2 14 55 2 185 54 2 13 28 2 41 12 2 43 48 2 40 28 2 41 13 2 42 12 2 43 34 2 45 16 2 47 38 2 44 34 2 45 17 2 46 16 2 47 0 3 63 56 3 60 57 3 61 57 3 61 58 3 62 0 3 63 58 3 62 57 3 61 43 3 187 43 3 187 11 3 186 58 3 62 45 3 65 8 3 67 46 3 64 45 3 65 9 3 66 8 3 67 44 3 189 59 3 124 60 3 125 60 3 125 10 3 188 44 3 189 10 3 188 60 3 125 1 3 126 1 3 126 61 3 127 10 3 188 10 3 77 58 3 79 11 3 76 10 3 77 61 3 78 58 3 79 59 3 73 43 3 75 57 3 72 59 3 73 44 3 74 43 3 75 14 3 53 49 3 55 15 3 52 14 3 53 30 3 54 49 3 55 18 3 49 39 3 51 19 3 48 18 3 49 36 3 50 39 3 51 56 3 23 42 3 20 41 3 21 41 3 21 57 3 190 56 3 23 57 3 190 41 3 21 60 3 22 60 3 22 59 3 191 57 3 190 0 4 11 3 4 8 52 4 192 52 4 192 47 4 9 0 4 11 56 4 195 0 4 11 47 4 9 47 4 9 37 4 193 56 4 195 42 4 10 56 4 195 37 4 193 37 4 193 40 4 194 42 4 10 7 4 100 20 4 101 4 4 103 20 4 101 23 4 102 4 4 103 11 4 96 43 4 97 8 4 99 43 4 97 46 4 98 8 4 99 48 4 148 12 4 149 49 4 151 12 4 149 15 4 150 49 4 151 38 4 144 16 4 145 39 4 147 16 4 145 19 4 146 39 4 147 26 5 198 25 5 0 54 5 196 54 5 196 2 5 1 26 5 198 29 5 199 26 5 198 2 5 1 2 5 1 1 5 2 29 5 199 32 5 200 29 5 199 1 5 2 1 5 2 60 5 197 32 5 200 35 5 201 32 5 200 60 5 197 60 5 197 41 5 3 35 5 201 21 5 104 6 5 105 22 5 107 6 5 105 5 5 106 22 5 107 44 5 116 10 5 117 45 5 119 10 5 117 9 5 118 45 5 119 13 5 152 28 5 153 14 5 155 28 5 153 30 5 154 14 5 155 17 5 160 34 5 161 18 5 163 34 5 161 36 5 162 18 5 163 </p>
+        </polylist>
+      </mesh>
+    </geometry>)
+    <geometry name="Box_12" id="Box_12-lib">
+      <mesh>
+        <source id="Box_12-position">
+          <float_array id="Box_12-position-array" count="60">9.5 2.5 -9.5 9.5 -7.5 -9.5 -9.5 -7.5 -9.5 -9.5 2.5 -9.5 10.5 -7.5 -10.5 10.5 -9.5 -10.5 -10.5 -9.5 -10.5 -10.5 -7.5 -10.5 -9.5 2.5 9.5 -9.5 -7.5 9.5 9.5 -7.5 9.5 9.5 2.5 9.5 -10.5 -7.5 10.5 -10.5 -9.5 10.5 10.5 -9.5 10.5 10.5 -7.5 10.5 -10.5 -7.5 9.5 -9.5 -7.5 -10.5 9.5 -7.5 10.5 10.5 -7.5 -9.5 </float_array>
+          <technique_common>
+            <accessor source="Box_12-position-array" stride="3" count="20">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Box_12-normal">
+          <float_array id="Box_12-normal-array" count="18">0.0 0.0 1.0 0.0 0.0 -1.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 -1.0 0.0</float_array>
+          <technique_common>
+            <accessor source="Box_12-normal-array" stride="3" count="6">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Box_12-uv">
+          <float_array id="Box_12-uv-array" count="128">0.007813 0.171875 0.007813 0.007813 0.171875 0.007813 0.171875 0.171875 0.1875 0.164063 0.1875 0.007813 0.195313 0.007813 0.195313 0.164063 0.210938 0.164063 0.210938 0.007813 0.21875 0.007813 0.21875 0.164063 0.234375 0.15625 0.234375 0.007813 0.382813 0.007813 0.382813 0.15625 0.703125 0.265625 0.703125 0.1875 0.851563 0.1875 0.851563 0.265625 0.007813 0.398438 0.007813 0.320313 0.15625 0.320313 0.15625 0.398438 0.171875 0.398438 0.171875 0.320313 0.320313 0.320313 0.320313 0.398438 0.335938 0.398438 0.335938 0.320313 0.484375 0.320313 0.484375 0.398438 0.398438 0.15625 0.398438 0.140625 0.5625 0.140625 0.5625 0.15625 0.578125 0.15625 0.578125 0.140625 0.742188 0.140625 0.742188 0.15625 0.757813 0.15625 0.757813 0.140625 0.921875 0.140625 0.921875 0.15625 0.445313 0.5 0.445313 0.484375 0.609375 0.484375 0.609375 0.5 0.5 0.398438 0.5 0.390625 0.65625 0.390625 0.65625 0.398438 0.671875 0.398438 0.671875 0.390625 0.828125 0.390625 0.828125 0.398438 0.734375 0.15625 0.554688 0.15625 0.914063 0.15625 0.601563 0.5 0.195313 0.15625 0.679688 0.398438 0.648438 0.390625 0.210938 0.015625 </float_array>
+          <technique_common>
+            <accessor source="Box_12-uv-array" stride="2" count="64">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Box_12-vertex">
+          <input semantic="POSITION" source="#Box_12-position" />
+        </vertices>
+        <polylist material="miner_dood-material" count="36">
+          <input offset="0" semantic="VERTEX" source="#Box_12-vertex" />
+          <input offset="1" semantic="NORMAL" source="#Box_12-normal" />
+          <input offset="2" semantic="TEXCOORD" source="#Box_12-uv" />
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>1 1 21 3 1 23 0 1 20 1 1 21 2 1 22 3 1 23 17 1 56 4 1 36 5 1 37 5 1 37 7 1 39 17 1 56 7 1 39 5 1 37 6 1 38 9 0 25 11 0 27 8 0 24 9 0 25 10 0 26 11 0 27 18 0 57 12 0 32 13 0 33 13 0 33 15 0 35 18 0 57 15 0 35 13 0 33 14 0 34 2 2 29 8 2 31 3 2 28 2 2 29 9 2 30 8 2 31 16 2 58 7 2 40 6 2 41 6 2 41 12 2 43 16 2 58 12 2 43 6 2 41 13 2 42 10 3 17 0 3 19 11 3 16 10 3 17 1 3 18 0 3 19 19 3 59 15 3 44 14 3 45 14 3 45 4 3 47 19 3 59 4 3 47 14 3 45 5 3 46 3 4 12 8 4 13 0 4 15 8 4 13 11 4 14 0 4 15 17 4 7 7 4 4 16 4 5 16 4 5 9 4 6 17 4 7 2 4 60 17 4 7 9 4 6 9 4 61 16 4 52 12 4 53 12 4 53 18 4 54 9 4 61 10 4 55 9 4 61 18 4 54 4 4 51 17 4 48 2 4 49 2 4 49 1 4 62 4 4 51 19 4 50 4 4 51 1 4 62 19 4 11 1 4 8 10 4 63 10 4 63 18 4 9 19 4 11 15 4 10 19 4 11 18 4 9 13 5 0 6 5 1 14 5 3 6 5 1 5 5 2 14 5 3 </p>
+        </polylist>
+      </mesh>
+    </geometry>)
+    <geometry name="Box_13" id="Box_13-lib">
+      <mesh>
+        <source id="Box_13-position">
+          <float_array id="Box_13-position-array" count="24">2.5 2.5 -5.5 2.5 -2.5 -5.5 -2.5 -2.5 -5.5 -2.5 2.5 -5.5 -2.5 2.5 5.5 -2.5 -2.5 5.5 2.5 -2.5 5.5 2.5 2.5 5.5 </float_array>
+          <technique_common>
+            <accessor source="Box_13-position-array" stride="3" count="8">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Box_13-normal">
+          <float_array id="Box_13-normal-array" count="18">0.0 0.0 1.0 0.0 0.0 -1.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 -1.0 0.0</float_array>
+          <technique_common>
+            <accessor source="Box_13-normal-array" stride="3" count="6">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Box_13-uv">
+          <float_array id="Box_13-uv-array" count="48">0.5 0.273438 0.5 0.1875 0.539063 0.1875 0.539063 0.273438 0.554688 0.273438 0.554688 0.1875 0.59375 0.1875 0.59375 0.273438 0.132813 0.523438 0.132813 0.484375 0.21875 0.484375 0.21875 0.523438 0.234375 0.523438 0.234375 0.484375 0.320313 0.484375 0.320313 0.523438 0.335938 0.523438 0.335938 0.484375 0.375 0.484375 0.375 0.523438 0.390625 0.523438 0.390625 0.484375 0.429688 0.484375 0.429688 0.523438 </float_array>
+          <technique_common>
+            <accessor source="Box_13-uv-array" stride="2" count="24">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Box_13-vertex">
+          <input semantic="POSITION" source="#Box_13-position" />
+        </vertices>
+        <polylist material="miner_dood-material" count="12">
+          <input offset="0" semantic="VERTEX" source="#Box_13-vertex" />
+          <input offset="1" semantic="NORMAL" source="#Box_13-normal" />
+          <input offset="2" semantic="TEXCOORD" source="#Box_13-uv" />
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>1 1 17 3 1 19 0 1 16 1 1 17 2 1 18 3 1 19 5 0 21 7 0 23 4 0 20 5 0 21 6 0 22 7 0 23 2 2 13 4 2 15 3 2 12 2 2 13 5 2 14 4 2 15 6 3 9 0 3 11 7 3 8 6 3 9 1 3 10 0 3 11 3 4 4 4 4 5 0 4 7 4 4 5 7 4 6 0 4 7 5 5 0 2 5 1 6 5 3 2 5 1 1 5 2 6 5 3 </p>
+        </polylist>
+      </mesh>
+    </geometry>)
+    <geometry name="Box_14" id="Box_14-lib">
+      <mesh>
+        <source id="Box_14-position">
+          <float_array id="Box_14-position-array" count="54">4.5 2.5 -7.5 4.5 -4.5 -7.5 -6.5 -4.5 -7.5 -6.5 2.5 -7.5 4.5 4.5 -5.5 4.5 2.5 -5.5 -4.5 2.5 -5.5 -4.5 4.5 -5.5 -6.5 2.5 7.5 -6.5 -4.5 7.5 4.5 -4.5 7.5 4.5 2.5 7.5 -4.5 4.5 5.5 -4.5 2.5 5.5 4.5 2.5 5.5 4.5 4.5 5.5 -4.5 2.5 7.5 -4.5 2.5 -7.5 </float_array>
+          <technique_common>
+            <accessor source="Box_14-position-array" stride="3" count="18">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Box_14-normal">
+          <float_array id="Box_14-normal-array" count="18">0.0 0.0 1.0 0.0 0.0 -1.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 -1.0 0.0</float_array>
+          <technique_common>
+            <accessor source="Box_14-normal-array" stride="3" count="6">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Box_14-uv">
+          <float_array id="Box_14-uv-array" count="116">0.796875 0.125 0.796875 0.007813 0.882813 0.007813 0.882813 0.125 0.007813 0.304688 0.007813 0.1875 0.023438 0.1875 0.023438 0.304688 0.203125 0.273438 0.203125 0.1875 0.273438 0.1875 0.273438 0.273438 0.5 0.375 0.5 0.320313 0.617188 0.320313 0.617188 0.375 0.765625 0.375 0.765625 0.320313 0.882813 0.320313 0.882813 0.375 0.898438 0.375 0.898438 0.320313 0.984375 0.320313 0.984375 0.375 0.257813 0.46875 0.257813 0.414063 0.34375 0.414063 0.34375 0.46875 0.875 0.5 0.875 0.484375 0.960938 0.484375 0.960938 0.5 0.007813 0.5625 0.007813 0.546875 0.09375 0.546875 0.09375 0.5625 0.578125 0.5625 0.578125 0.546875 0.648438 0.546875 0.648438 0.5625 0.664063 0.5625 0.664063 0.546875 0.734375 0.546875 0.734375 0.5625 0.75 0.5625 0.75 0.546875 0.820313 0.546875 0.820313 0.5625 0.921875 0.5625 0.921875 0.546875 0.992188 0.546875 0.992188 0.5625 0.96875 0.375 0.273438 0.46875 0.601563 0.375 0.515625 0.375 0.023438 0.289063 0.023438 0.203125 </float_array>
+          <technique_common>
+            <accessor source="Box_14-uv-array" stride="2" count="58">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Box_14-vertex">
+          <input semantic="POSITION" source="#Box_14-position" />
+        </vertices>
+        <polylist material="miner_dood-material" count="32">
+          <input offset="0" semantic="VERTEX" source="#Box_14-vertex" />
+          <input offset="1" semantic="NORMAL" source="#Box_14-normal" />
+          <input offset="2" semantic="TEXCOORD" source="#Box_14-uv" />
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>17 1 52 0 1 20 1 1 21 1 1 21 3 1 23 17 1 52 3 1 23 1 1 21 2 1 22 5 1 45 7 1 47 4 1 44 5 1 45 6 1 46 7 1 47 16 0 53 8 0 24 9 0 25 9 0 25 11 0 27 16 0 53 11 0 27 9 0 25 10 0 26 13 0 49 15 0 51 12 0 48 13 0 49 14 0 50 15 0 51 2 2 17 8 2 19 3 2 16 2 2 17 9 2 18 8 2 19 6 2 29 12 2 31 7 2 28 6 2 29 13 2 30 12 2 31 14 3 55 11 3 12 10 3 13 10 3 13 5 3 54 14 3 55 5 3 54 10 3 13 1 3 14 1 3 14 0 3 15 5 3 54 14 3 33 4 3 35 15 3 32 14 3 33 5 3 34 4 3 35 7 4 8 12 4 9 4 4 11 12 4 9 15 4 10 4 4 11 17 4 7 3 4 4 8 4 5 8 4 5 16 4 6 17 4 7 6 4 56 17 4 7 16 4 6 16 4 6 13 4 57 6 4 56 17 4 36 6 4 37 0 4 39 6 4 37 5 4 38 0 4 39 13 4 40 16 4 41 14 4 43 16 4 41 11 4 42 14 4 43 9 5 0 2 5 1 10 5 3 2 5 1 1 5 2 10 5 3 </p>
+        </polylist>
+      </mesh>
+    </geometry>)
+    <geometry name="Box_15" id="Box_15-lib">
+      <mesh>
+        <source id="Box_15-position">
+          <float_array id="Box_15-position-array" count="66">6.5 2.5 -7.5 6.5 -4.5 -7.5 -4.5 -4.5 -7.5 -4.5 2.5 -7.5 4.5 4.5 -5.5 4.5 2.5 -5.5 -4.5 2.5 -5.5 -4.5 4.5 -5.5 -4.5 2.5 7.5 -4.5 -4.5 7.5 6.5 -4.5 7.5 6.5 2.5 7.5 -4.5 4.5 5.5 -4.5 2.5 5.5 4.5 2.5 5.5 4.5 4.5 5.5 5.5 2.5 -5.5 5.5 2.5 -7.5 4.5 2.5 7.5 4.5 2.5 6.5 5.5 2.5 6.5 6.5 2.5 6.5 </float_array>
+          <technique_common>
+            <accessor source="Box_15-position-array" stride="3" count="22">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Box_15-normal">
+          <float_array id="Box_15-normal-array" count="18">0.0 0.0 1.0 0.0 0.0 -1.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 -1.0 0.0</float_array>
+          <technique_common>
+            <accessor source="Box_15-normal-array" stride="3" count="6">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Box_15-uv">
+          <float_array id="Box_15-uv-array" count="140">0.898438 0.125 0.898438 0.007813 0.984375 0.007813 0.984375 0.125 0.132813 0.296875 0.132813 0.1875 0.140625 0.1875 0.140625 0.296875 0.179688 0.28125 0.179688 0.1875 0.1875 0.1875 0.1875 0.28125 0.289063 0.273438 0.289063 0.1875 0.359375 0.1875 0.359375 0.273438 0.867188 0.242188 0.867188 0.1875 0.984375 0.1875 0.984375 0.242188 0.632813 0.375 0.632813 0.320313 0.75 0.320313 0.75 0.375 0.359375 0.46875 0.359375 0.414063 0.445313 0.414063 0.445313 0.46875 0.460938 0.46875 0.460938 0.414063 0.546875 0.414063 0.546875 0.46875 0.109375 0.5625 0.109375 0.546875 0.195313 0.546875 0.195313 0.5625 0.210938 0.5625 0.210938 0.546875 0.296875 0.546875 0.296875 0.5625 0.3125 0.5625 0.3125 0.546875 0.390625 0.546875 0.390625 0.5625 0.40625 0.5625 0.40625 0.546875 0.476563 0.546875 0.476563 0.5625 0.492188 0.5625 0.492188 0.546875 0.5625 0.546875 0.5625 0.5625 0.835938 0.5625 0.835938 0.546875 0.90625 0.546875 0.90625 0.5625 0.96875 0.398438 0.96875 0.390625 0.984375 0.390625 0.984375 0.398438 0.367188 0.46875 0.53125 0.46875 0.882813 0.242188 0.96875 0.242188 0.640625 0.375 0.382813 0.546875 0.90625 0.554688 0.179688 0.195313 0.132813 0.28125 0.976563 0.398438 </float_array>
+          <technique_common>
+            <accessor source="Box_15-uv-array" stride="2" count="70">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Box_15-vertex">
+          <input semantic="POSITION" source="#Box_15-position" />
+        </vertices>
+        <polylist material="miner_dood-material" count="40">
+          <input offset="0" semantic="VERTEX" source="#Box_15-vertex" />
+          <input offset="1" semantic="NORMAL" source="#Box_15-normal" />
+          <input offset="2" semantic="TEXCOORD" source="#Box_15-uv" />
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>17 1 60 0 1 24 1 1 25 1 1 25 3 1 27 17 1 60 3 1 27 1 1 25 2 1 26 5 1 49 7 1 51 4 1 48 5 1 49 6 1 50 7 1 51 18 0 61 8 0 28 9 0 29 9 0 29 11 0 31 18 0 61 11 0 31 9 0 29 10 0 30 13 0 45 15 0 47 12 0 44 13 0 45 14 0 46 15 0 47 6 2 62 3 2 16 2 2 17 2 2 17 13 2 63 6 2 62 13 2 63 2 2 17 9 2 18 9 2 18 8 2 19 13 2 63 6 2 33 12 2 35 7 2 32 6 2 33 13 2 34 12 2 35 21 3 64 11 3 20 10 3 21 10 3 21 0 3 23 21 3 64 0 3 23 10 3 21 1 3 22 14 3 37 4 3 39 15 3 36 14 3 37 5 3 38 4 3 39 7 4 12 12 4 13 4 4 15 12 4 13 15 4 14 4 4 15 17 4 43 3 4 40 6 4 41 6 4 41 5 4 65 17 4 43 16 4 42 17 4 43 5 4 65 14 4 55 13 4 52 8 4 53 8 4 53 18 4 54 14 4 55 19 4 66 14 4 55 18 4 54 16 4 11 5 4 8 14 4 67 14 4 67 19 4 9 16 4 11 20 4 10 16 4 11 19 4 9 0 4 7 17 4 4 16 4 68 16 4 68 20 4 5 0 4 7 21 4 6 0 4 7 20 4 5 20 4 69 19 4 56 18 4 57 18 4 57 11 4 58 20 4 69 21 4 59 20 4 69 11 4 58 9 5 0 2 5 1 10 5 3 2 5 1 1 5 2 10 5 3 </p>
+        </polylist>
+      </mesh>
+    </geometry>)
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="miner_dood-scene" name="miner_dood-scene">
+      <node sid="Box_11" id="Box_11" name="Box_11">
+        <translate sid="translate">0.50 60.50 -85.50</translate>
+        <instance_geometry url="#Box_11-lib">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="miner_dood-material" target="#miner_dood-material" />
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node sid="Box_12" id="Box_12" name="Box_12">
+        <translate sid="translate">0.50 68.50 -85.50</translate>
+        <instance_geometry url="#Box_12-lib">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="miner_dood-material" target="#miner_dood-material" />
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node sid="Box_13" id="Box_13" name="Box_13">
+        <translate sid="translate">0.50 52.50 -81.50</translate>
+        <instance_geometry url="#Box_13-lib">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="miner_dood-material" target="#miner_dood-material" />
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node sid="Box_14" id="Box_14" name="Box_14">
+        <translate sid="translate">-6.50 49.50 -85.50</translate>
+        <instance_geometry url="#Box_14-lib">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="miner_dood-material" target="#miner_dood-material" />
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node sid="Box_15" id="Box_15" name="Box_15">
+        <translate sid="translate">7.50 49.50 -85.50</translate>
+        <instance_geometry url="#Box_15-lib">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="miner_dood-material" target="#miner_dood-material" />
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene name="" sid="" url="#miner_dood-scene" />
+  </scene>
+</COLLADA>
