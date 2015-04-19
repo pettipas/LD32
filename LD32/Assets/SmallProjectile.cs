@@ -4,9 +4,9 @@ using System.Collections;
 public class SmallProjectile : MonoBehaviour {
 	
 	public Rigidbody rigidbody;
-	
-	public void Fire(Transform lp){
-		rigidbody.AddForce(lp.forward*15.0f,ForceMode.Impulse);
+
+	public void Fire(Transform lp,float power){
+		rigidbody.AddForce(lp.forward*power,ForceMode.Impulse);
 	}
 	
 	public void OnCollisionEnter(Collision other){
