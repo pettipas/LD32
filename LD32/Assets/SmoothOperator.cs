@@ -10,7 +10,21 @@ public class SmoothOperator : MonoBehaviour {
 	public float targetFov;
 	public float targetZOffset;
 
+
+
+	public bool anyInput;
+
 	void Update () {
+
+
+		if(Input.anyKeyDown){
+			anyInput = true;
+		}
+
+		if(!anyInput){
+			return;
+		}
+
 		if(ourHero == null){
 			return;
 		}

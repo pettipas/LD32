@@ -16,6 +16,12 @@ public class MineGuy : MonoBehaviour {
 	public Transform launchPoint;
 	public int index = 0;
 	public void Start(){
+
+		if(EntryPoint.StaticHero == null){
+			return;
+		}
+
+		player = EntryPoint.StaticHero.transform;
 		StartCoroutine(GoToWayPoint());
 	}
 
@@ -23,7 +29,7 @@ public class MineGuy : MonoBehaviour {
 
 	public IEnumerator AttackForTime(){
 		attackTimer = 0;
-		while(attackTimer < 10.0f){
+		while(attackTimer < 10.0f && player!=null){
 
 			Vector3 d = (player.position - transform.position).normalized;
 			d = new Vector3(d.x,0,d.z);

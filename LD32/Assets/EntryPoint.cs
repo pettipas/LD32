@@ -5,10 +5,16 @@ using System.Linq;
 
 public class EntryPoint : MonoBehaviour {
 
-	public void Awake(){
+	public Hero hero;
+	public GameObject gameOverPrefab;
+	public SmoothOperator operatorCam;
 
+	public static Hero StaticHero;
+
+	Vector3 playerLatestPosition;
+	public void Awake(){
+		StaticHero = hero;
 		List<MineGuy> mineGuys = GameObject.FindObjectsOfType<MineGuy>().ToList();
-		Hero hero = GameObject.FindObjectOfType<Hero>();
 
 		mineGuys.ForEach(x=>{
 			x.player =hero.transform;
@@ -21,4 +27,24 @@ public class EntryPoint : MonoBehaviour {
 			});
 		});
 	}
+
+	bool restarted;
+	public IEnumerator RestartCountDown(){
+		yield return new WaitForSeconds(5.0f);
+		Application.LoadLevel("main");
+	}
+
+	public void Update(){
+		if(hero != null){
+			playerLatestPosition = hero.transform.position;
+		}
+
+		if(hero == null && !restarted){
+			restarted = true;
+			operatorCam.targetFov = 10;
+			Instantiate(gameOverPrefab,playerLatestPosition+=new Vector3(0,20,0),gameOverPrefab.transform.rotation);
+			StartCoroutine(RestartCountDown());
+		}
+	}
+
 }
