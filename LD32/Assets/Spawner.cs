@@ -7,7 +7,8 @@ public class Spawner : MonoBehaviour {
 	public GameObject enemyPrefab;
 	public ParticleSystem spawnerSystem;
 	public int total;
-	public void Awake(){
+
+	public void OnEnable(){
 		spawnerSystem.enableEmission = false;
 		StartCoroutine(Spawn());
 	}

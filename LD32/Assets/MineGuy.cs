@@ -17,6 +17,10 @@ public class MineGuy : MonoBehaviour {
 
 	public float lockHeight;
 
+	public void Awake(){
+		lockHeight=transform.position.y;
+	}
+
 	public void Start(){
 
 		if(EntryPoint.StaticHero == null){

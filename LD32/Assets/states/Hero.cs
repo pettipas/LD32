@@ -5,15 +5,33 @@ using System.Linq;
 
 public class Hero : MonoBehaviour {
 
-	public NavMeshAgent agent;
+
+	public List<GameObject> glasses = new List<GameObject>();
 	public static Hero Instance;
 	public Vector3 currentDest;
 	protected Movement mvment;
-	public float range;
+	public Vitality vitality;
 
 	public void Awake(){
 		mvment = GetComponent<Movement>();
+		SetGlasses();
 	}
+
+	void SetGlasses(){
+		int index = vitality.hits-1;
+		for(int i = 0; i < glasses.Count;i++){
+			if(i != index){
+				glasses[i].GetComponent<MeshRenderer>().enabled = false;
+			}else {
+				glasses[i].GetComponent<MeshRenderer>().enabled = true;
+			}
+		}
+	}
+
+	public void Update(){
+		SetGlasses();
+	}
+
 
 	public void Init () {
 		Instance = this;
@@ -40,9 +58,4 @@ public class Hero : MonoBehaviour {
 		stateMachine.DoTransition(mvment);
 	}
 
-
-	public void OnDrawGizmos(){
-		Gizmos.color = Color.cyan;
-		Gizmos.DrawWireSphere(transform.position,range);
-	}
 }
