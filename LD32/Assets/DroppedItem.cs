@@ -21,6 +21,9 @@ public class DroppedItem : MonoBehaviour {
 					bg.GetComponent<Vitality>().TakeHit();
 				}
 
+			}
+
+			if(collision.relativeVelocity.magnitude > 10){
 				if(h){
 					h.GetComponent<Vitality>().TakeHit();
 				}

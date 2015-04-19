@@ -10,8 +10,6 @@ public class SmoothOperator : MonoBehaviour {
 	public float targetFov;
 	public float targetZOffset;
 
-
-
 	public bool anyInput;
 
 	void Update () {

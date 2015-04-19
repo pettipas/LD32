@@ -3,12 +3,27 @@ using System.Collections;
 
 public class Spitter : MonoBehaviour {
 
+	public Transform body;
 	public GameObject projPrefab;
 	public Transform launchPoint;
 	public Animator spitter;
 	public float power;
-	public void Awake(){
+	public Transform player;
+
+	public void OnEnable(){
+		player = EntryPoint.StaticHero.transform;
 		StartCoroutine(SpitSpikes());
+		body = transform.Find ("body");
+	}
+
+	public void Update(){
+
+		if(player == null){
+			return;
+		}
+		Vector3 dir = (player.position - transform.position).normalized;
+		dir = new Vector3(dir.x,0,dir.z);
+		body.forward = dir;
 	}
 
 	public IEnumerator SpitSpikes(){
