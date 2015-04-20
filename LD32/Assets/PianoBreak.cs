@@ -14,7 +14,8 @@ public class PianoBreak : BreakEffect {
 		if(!called){
 			called = true;
 			transform.parent = null;
-			wholePiano.SetActive(false);
+			wholePiano.GetComponent<Renderer>().enabled = false;
+			wholePiano.GetComponent<BoxCollider>().enabled = false;
 			parts.ForEach(p=>{
 				p.GetComponent<Renderer>().enabled = true;
 				p.AddComponent<Rigidbody>();
