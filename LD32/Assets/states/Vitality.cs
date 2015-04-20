@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Vitality : MonoBehaviour {
 
-
+	public AudioSource win;
 	public int hits;
 	public GameObject death;
 	public void TakeHit(){
@@ -18,6 +18,7 @@ public class Vitality : MonoBehaviour {
 
 	public void GainHealth ()
 	{
+		win.Play();
 		hits++;
 	}
 

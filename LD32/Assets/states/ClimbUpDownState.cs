@@ -8,7 +8,7 @@ public class ClimbUpDownState : State {
 	[SerializeField]protected Transform body;
 	public Animator bodyAnimation;
 	public SmoothOperator muchSmooth;
-
+	public AudioSource walk;
 
 	public void OnEnable()
 	{
@@ -29,8 +29,14 @@ public class ClimbUpDownState : State {
 
 		if(data.Direction != Vector3.zero){
 			bodyAnimation.Play("climb");
+
 		}else{
 			bodyAnimation.Play("rest");
+			walk.Stop ();
+		}
+
+		if(data.Direction.z > 0 && !walk.isPlaying){
+			walk.Play();
 		}
 
 		transform.Translate(new Vector3(0,data.Direction.z,0) * speed * Time.deltaTime);

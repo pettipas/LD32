@@ -10,7 +10,7 @@ public class Movement : State {
 	public State takeDamage;
 
 	public Animator bodyAnimation;
-
+	public AudioSource walk;
 	void Awake () {
 		data = GetComponent<StateData>();
 		ctrl = GetComponent<CharacterController>();
@@ -20,11 +20,17 @@ public class Movement : State {
 
 		if(data.Direction != Vector3.zero){
 			bodyAnimation.Play("walk");
+
 		}else{
 			bodyAnimation.Play("rest");
+			walk.Stop();
 		}
 
 		ctrl.Move(new Vector3(data.Direction.x,0,data.Direction.z) * speed * Time.deltaTime);
+
+		if(ctrl.velocity != Vector3.zero && !walk.isPlaying){
+			walk.Play();
+		}
 
 		if(data.Direction.normalized != Vector3.zero){
 			body.transform.forward = data.Direction.normalized;
