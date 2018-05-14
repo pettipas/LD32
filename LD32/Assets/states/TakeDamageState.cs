@@ -11,7 +11,7 @@ public class TakeDamageState : State {
 	public Vector3 slideDir;
 	public CharacterController characterController;
 	public Vector3 potentialPosition;
-	public NavMeshAgent navMeshAgent;
+	public UnityEngine.AI.NavMeshAgent navMeshAgent;
 	protected float damage;
 
 
